@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from './Card';
 import Form from 'react-bootstrap/Form';
 import './PopUp.css';
+import axios from "axios";
 
 const PopUp = ({setShowModal}) => {
     const submitClickHandler = () => {
@@ -11,6 +12,7 @@ const PopUp = ({setShowModal}) => {
         } else if (enteredPassword != enteredConfirmPassword) {
             setPasswordsMatch(false);
         } else {
+            
             window.location.href='/course'
         }
     };

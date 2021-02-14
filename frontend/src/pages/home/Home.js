@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PopUp from "./componets/PopUp";
 import Welcome from "./componets/Welcome";
+import axios from "axios";
 
 const Home = () => {
   const [emailMatchingCheck, setEmailMatchingCheck] = useState(false);
