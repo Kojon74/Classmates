@@ -1,17 +1,23 @@
 import React from "react";
 import QuestionList from "./components/QuestionList";
 import Post from "./components/Post";
-import { AppProvider } from "./context";
+import { useGlobalContext } from "./context";
 import "./Course.css";
+import NewQuestion from "./components/NewQuestion";
 
 const Course = () => {
+  const { questionSelected, isNewQuestion } = useGlobalContext();
   return (
-    <AppProvider>
-      <section className="course">
-        <QuestionList />
+    <section className="course">
+      <QuestionList />
+      {isNewQuestion ? (
+        <NewQuestion />
+      ) : questionSelected ? (
         <Post />
-      </section>
-    </AppProvider>
+      ) : (
+        <div></div>
+      )}
+    </section>
   );
 };
 

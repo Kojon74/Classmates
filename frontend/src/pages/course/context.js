@@ -6,6 +6,8 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [questionList, setQuestionList] = useState(data);
   const [activePost, setActivePost] = useState({});
+  const [questionSelected, setQuestionSelected] = useState(false);
+  const [isNewQuestion, setIsNewQuestion] = useState(false);
 
   const setActivePostId = (id) => {
     const matchingIdQ = questionList.find(
@@ -15,7 +17,16 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ activePost, setActivePostId }}>
+    <AppContext.Provider
+      value={{
+        activePost,
+        setActivePostId,
+        questionSelected,
+        setQuestionSelected,
+        isNewQuestion,
+        setIsNewQuestion,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
