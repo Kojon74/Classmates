@@ -11,7 +11,7 @@ router.route('/add').post((req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const enteredEmail = req.body.EnteredEmail;
-  const studentId = req.body.studentId;
+  const enteredStudentId = req.body.enteredStudentId;
   const university = req.body.university;
   const department = req.body.department;
   const enteredPassword = req.body.enteredPassword;
@@ -20,7 +20,7 @@ router.route('/add').post((req, res) => {
     firstName,
     lastName,
     enteredEmail,
-    studentId,
+    enteredStudentId,
     university,
     department,
     enteredPassword,
@@ -50,7 +50,7 @@ router.route('/:id').get((req, res) => {
         exercise.firstName = req.body.firstName;
         exercise.lastName = req.body.lastName;
         exercise.enteredEmail = req.body.eneterdEmail;
-        exercise.studentId = req.body.studentId;
+        exercise.enteredStudentId = req.body.enteredStudentId;
         exercise.university = req.body.university;
         exercise.department = req.body.department;
         exercise.enteredPassword = req.body.enteredPassword;
