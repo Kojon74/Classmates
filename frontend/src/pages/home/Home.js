@@ -102,7 +102,7 @@ import PopUp from './componets/PopUp';
                   </Form.Group>
                   <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="text" placeholder="Must include numbers" onChange={passwordInputHandler}/>
+                    <Form.Control type="password" placeholder="Must include numbers" onChange={passwordInputHandler}/>
                     {!emailMatchingCheck && <p className="warning">Your email and password don't match</p>}
                   </Form.Group>
                 </Form>
