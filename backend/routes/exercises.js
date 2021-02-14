@@ -8,22 +8,22 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-  const firstname = req.body.firstname;
-  const lastname = req.body.lastname;
-  const email = req.body.email;
-  const studentid = req.body.studentid;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const enteredEmail = req.body.EnteredEmail;
+  const studentId = req.body.studentId;
   const university = req.body.university;
   const department = req.body.department;
-  const password = req.body.password;
+  const enteredPassword = req.body.enteredPassword;
 
   const newExercise = new Exercise({
-    firstname,
-    lastname,
-    email,
-    studentid,
+    firstName,
+    lastName,
+    enteredEmail,
+    studentId,
     university,
     department,
-    password,
+    enteredPassword,
   });
 
   newExercise.save()
@@ -47,13 +47,13 @@ router.route('/:id').get((req, res) => {
   router.route('/update/:id').post((req, res) => {
     Exercise.findById(req.params.id)
       .then(exercise => {
-        exercise.firstname = req.body.firstname;
-        exercise.lastname = req.body.lastname;
-        exercise.email = req.body.email;
-        exercise.studentid = req.body.studentid;
+        exercise.firstName = req.body.firstName;
+        exercise.lastName = req.body.lastName;
+        exercise.enteredEmail = req.body.eneterdEmail;
+        exercise.studentId = req.body.studentId;
         exercise.university = req.body.university;
         exercise.department = req.body.department;
-        exercise.password = req.body.password;
+        exercise.enteredPassword = req.body.enteredPassword;
 
         exercise.save()
           .then(() => res.json('Exercise updated!'))
