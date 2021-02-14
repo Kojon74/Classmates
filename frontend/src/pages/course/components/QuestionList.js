@@ -13,9 +13,11 @@ const QuestionList = () => {
       <button className="new-q" onClick={() => setIsNewQuestion(true)}>
         New Question
       </button>
-      {docs.map((question) => {
-        return <Question key={question.questionId} {...question} />;
-      })}
+      <div className="questions-container">
+        {docs.map((question) => {
+          return <Question key={question.questionId} {...question} />;
+        })}
+      </div>
     </section>
   );
 };

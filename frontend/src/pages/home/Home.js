@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./home.css";
-import Title from "./componets/Title";
+import "./Home.css";
 import Card from "./componets/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -30,12 +29,12 @@ const Home = () => {
     setDepartment(e.target.value);
   };
   const guestInputHandler = () => {
-    if (university == 0 && department == 0) {
+    if (university === 0 && department === 0) {
       setShowUniError(true);
       setShowDepError(true);
-    } else if (university == 0 && department != 0) {
+    } else if (university === 0 && department !== 0) {
       setShowUniError(true);
-    } else if (department == 0 && university != 0) {
+    } else if (department === 0 && university !== 0) {
       setShowDepError(true);
     } else {
       window.location.href = "/course";
@@ -51,7 +50,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <Title>Classmates</Title> */}
       <Welcome />
       <Container fluid="md">
         <Row>
@@ -66,7 +64,6 @@ const Home = () => {
                   <Form.Label>University</Form.Label>
                   <Form.Control
                     as="select"
-                    value=""
                     onChange={universityDropdownHandler}
                     value={university}
                   >
@@ -83,7 +80,6 @@ const Home = () => {
                   <Form.Label>Department</Form.Label>
                   <Form.Control
                     as="select"
-                    value=""
                     onChange={departmentDropdownHandler}
                     value={department}
                   >
