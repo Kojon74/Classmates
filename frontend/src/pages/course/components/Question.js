@@ -9,10 +9,24 @@ const Question = ({
   questionTime,
   answers,
 }) => {
-  const { setActivePostId } = useGlobalContext();
+  const {
+    setActivePostId,
+    setQuestionSelected,
+    isNewQuestion,
+    setIsNewQuestion,
+  } = useGlobalContext();
+
+  const handleSelectQuestion = () => {
+    setQuestionSelected(true);
+    setActivePostId(questionId);
+    if (isNewQuestion) setIsNewQuestion(false);
+  };
+
   return (
-    <section className="question" onClick={() => setActivePostId(questionId)}>
-      <h4 className="question-title">{questionTitle}</h4>
+    <section className="question" onClick={handleSelectQuestion}>
+      <h5 className="question-title">{questionTitle}</h5>
+      <h6 className="question-user">{questionUser}</h6>
+      <div className="border-bottom" />
     </section>
   );
 };
