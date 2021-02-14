@@ -11,7 +11,9 @@ import PopUp from "./componets/PopUp";
 import Welcome from "./componets/Welcome";
 
 const Home = () => {
-  const [emailMatchingCheck, setEmailMatchingCheck] = useState(false);
+  const storedEmail = "menghan.zhao1997@gmail.com"
+  const storedPassword = "classmates"
+  const [emailMatchingCheck, setEmailMatchingCheck] = useState(true);
   const [major, setMajor] = useState(0);
   const [showUniError, setShowUniError] = useState(false);
   const [showDepError, setShowDepError] = useState(false);
@@ -50,10 +52,14 @@ const Home = () => {
   const passwordInputHandler = (e) => {
     setEnteredPassword(e.target.value);
   };
-  const LogInHandler = () => {};
-  const majorInputHandler = () => {
-    window.location.href = "/major";
+  const LogInHandler = () => {
+    if (storedEmail != enteredEmail || storedPassword != enteredPassword) {
+      setEmailMatchingCheck(false);
+    } else {
+      window.location.href = "/course";
+    }
   };
+ 
 
   return (
     <div>

@@ -12,8 +12,19 @@ const PopUp = ({setShowModal}) => {
         } else if (enteredPassword != enteredConfirmPassword) {
             setPasswordsMatch(false);
         } else {
-            
-            window.location.href='/course'
+            const exercise={
+                "firstName":firstName,
+                "lastName":lastName,
+                "enteredEmail":enteredEmail,
+                "enteredStudentId":enteredStudentId,
+                "university":university,
+                "department":department,
+                "enteredPassword":enteredPassword
+            }
+            console.log(exercise);
+            axios.post('http://localhost:5000/exercise/add', exercise)
+                    .then(res => console.log(res.data));
+            window.location.href='/course';
         }
     };
     const[firstName, setFirstName] = useState(0);
