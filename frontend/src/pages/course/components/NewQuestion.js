@@ -1,14 +1,26 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context";
+import { v4 as uuidv4 } from "uuid";
 
 const NewQuestion = () => {
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionText, setQuestionText] = useState("");
 
-  const { setIsNewQuestion } = useGlobalContext();
+  const { setIsNewQuestion, addQuestionFirebase } = useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const id = uuidv4();
+    const question = {
+      questionId: id,
+      questionTitle,
+      questionText,
+      questionUser: "user1",
+      questionTime: new Date().getTime().toString(),
+      answers: [],
+    };
+    addQuestionFirebase(question);
+    setIsNewQuestion(false);
   };
 
   return (

@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import data from "../../data";
+import { projectFirestore } from "../../firebase";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [questionList, setQuestionList] = useState(data);
+  const [questionList, setQuestionList] = useState([]);
   const [activePost, setActivePost] = useState({});
   const [questionSelected, setQuestionSelected] = useState(false);
   const [isNewQuestion, setIsNewQuestion] = useState(false);
@@ -16,15 +16,29 @@ const AppProvider = ({ children }) => {
     setActivePost(matchingIdQ);
   };
 
+  const addQuestionFirebase = (question) => {
+    projectFirestore
+      .collection("questions")
+      .doc(question.questionId)
+      .set({ ...question })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // const AddAnswerFirebase = (questionId, answer);
+
   return (
     <AppContext.Provider
       value={{
+        setQuestionList,
         activePost,
         setActivePostId,
         questionSelected,
         setQuestionSelected,
         isNewQuestion,
         setIsNewQuestion,
+        addQuestionFirebase,
       }}
     >
       {children}

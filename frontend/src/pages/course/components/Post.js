@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import Answer from "./Answer";
+import { v4 as uuidv4 } from "uuid";
 
 const Post = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const { activePost } = useGlobalContext();
+  const { activePost, addQuestionFirebase } = useGlobalContext();
 
   const handleChange = (e) => {
     const newVal = e.target.value;
@@ -13,6 +14,18 @@ const Post = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // if (activePost === null) return;
+    const answer = {
+      answerId: uuidv4(),
+      answerText: userAnswer,
+      answerUser: "user2",
+      answerTime: new Date().getTime().toString(),
+    };
+    const answers = [...activePost.answers, answer];
+    activePost.answers = answers;
+    const question = { ...activePost };
+    addQuestionFirebase(question);
+    setUserAnswer("");
   };
 
   return (
@@ -22,11 +35,11 @@ const Post = () => {
       <p className="text">{activePost.questionText}</p>
       <form className="your-answer" onSubmit={handleSubmit}>
         <label>Your Answer</label>
-        <input type="text" value={userAnswer} onChange={handleChange}></input>
+        <textarea type="text" value={userAnswer} onChange={handleChange} />
         <button className="submit">Post Answer</button>
       </form>
       {activePost.answers.map((answer) => {
-        return <Answer {...answer} />;
+        return <Answer key={answer.answerId} {...answer} />;
       })}
     </section>
   );
