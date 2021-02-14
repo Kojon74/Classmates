@@ -108,6 +108,7 @@ const Home = () => {
           </Col>
           <Col>
             <Card>
+<<<<<<< HEAD
               <Form className="form">
                 <Form.Group controlId="exampleForm.ControlInput1">
                   <Form.Label>Email Address</Form.Label>
@@ -154,6 +155,31 @@ const Home = () => {
       </Container>
       {showModal && <PopUp setShowModal={setShowModal}></PopUp>}
     </div>
+=======
+                <Form className="form">
+                  <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control type="text" placeholder="e.g.: example@email.com" onChange={emailInputHandler}/>
+                  </Form.Group>
+                  <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Must include numbers" onChange={passwordInputHandler}/>
+                    {!emailMatchingCheck && <p className="warning">Your email and password don't match</p>}
+                  </Form.Group>
+                </Form>
+                <div>
+                  <Button variant="primary" className="mainPageButton" onClick={LogInHandler}>Log in</Button>
+                
+                  <Button variant="primary" className="signinformButton" onClick={ButtonClickHandler}>Sign up</Button>
+                  
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+        {showModal && <PopUp setShowModal={setShowModal}></PopUp>}
+      </div>
+>>>>>>> 7b535af212e04ddf56e480531a334745c6efc76e
   );
 };
 
