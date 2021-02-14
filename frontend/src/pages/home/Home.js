@@ -21,7 +21,6 @@ import PopUp from './componets/PopUp';
     };
 
   return (
-    <body className="homePage">
       <div>
         <Title>Classmates</Title>
         <Container fluid="md">
@@ -81,7 +80,6 @@ import PopUp from './componets/PopUp';
         </Container>
         {showModal && <PopUp></PopUp>}
       </div>
-    </body>
   );
 };
 
