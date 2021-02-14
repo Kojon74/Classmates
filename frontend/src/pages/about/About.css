@@ -1,0 +1,9 @@
+.about h1 {
+  width: fit-content;
+  margin: 50px auto;
+}
+
+.about p {
+  padding: 0 200px;
+  font-size: 20px;
+}

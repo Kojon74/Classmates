@@ -1,2 +1,5 @@
 node_modules/
 *./ipynb
+*.DS_Store
+
+.DS_Store

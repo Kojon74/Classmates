@@ -1,26 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="nav">
-      <h1 className="nav-header">Classmates</h1>
-      <Button
-        onClick={(event) => (window.location.href = "/")}
-        className="navbarButton"
-        variant="outline-primary"
-      >
+      <Link className="nav-header" to="/">
+        Classmates
+      </Link>
+      <Link className="nav-link" to="/">
         Home
-      </Button>
-
-      <Button
-        onClick={(event) => (window.location.href = "/about")}
-        className="navbarButton"
-        variant="outline-secondary"
-      >
+      </Link>
+      <Link className="nav-link" to="/about">
         About
-      </Button>
+      </Link>
     </nav>
   );
 };
