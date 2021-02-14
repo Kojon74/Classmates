@@ -81,8 +81,8 @@ const PopUp = ({setShowModal}) => {
                         <option>University of Calgary</option>
                         <option>University of Alberta</option>
                         <option>University of British Clombia</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>University of Saskatchwan</option>
+                        <option>University of Toronto</option>
                     </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlSelect2">

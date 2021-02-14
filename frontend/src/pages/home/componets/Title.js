@@ -11,7 +11,7 @@ const Title = props => {
           <h1 className="companyName">{props.children}</h1>
           <div style={{ width: "450px" }}>
             <p className="titlePara">
-            Meeting your classmates online, and start collaborating now!
+            Meet your classmates online, and start collaborating now!
             </p>
           </div>
           <p>
