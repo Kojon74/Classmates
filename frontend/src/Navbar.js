@@ -17,6 +17,7 @@ const Navbar = () => {
       <Link className="nav-link" to="/about">
         About
       </Link>
+      
     </nav>
   );
 };
