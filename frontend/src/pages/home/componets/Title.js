@@ -15,7 +15,7 @@ const Title = props => {
             </p>
           </div>
           <p>
-            <Button variant="primary">Learn More</Button>
+            <Button onClick={ event => window.location.href='/about'} variant="primary">Learn More</Button>
           </p>
         </Jumbotron>
     );

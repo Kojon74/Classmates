@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './home.css';
-import Title from './componets/Title.js';
-import Card from './componets/Card.js';
+import Title from './componets/Title';
+import Card from './componets/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import PopUp from './componets/PopUp';
 
 
-const Home = () => {
+
+  const Home = () => {
+    
+    const[showModal, setShowModal] = useState(false);
+
+    const ButtonClickHandler = () => {
+      setShowModal(true);
+    };
+
   return (
-    <body>
+    <body className="homePage">
       <div>
         <Title>Classmates</Title>
         <Container fluid="md">
@@ -21,7 +30,7 @@ const Home = () => {
               <Card>
                 <Form className="form">
                   <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Name *Optional</Form.Label>
                     <Form.Control type="text" placeholder="e.g.: John" />
                   </Form.Group>
                   <Form.Group controlId="exampleForm.ControlSelect1">
@@ -60,6 +69,10 @@ const Home = () => {
                     <Form.Control type="text" placeholder="e.g.: John" />
                   </Form.Group>
                   <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control type="text" placeholder="e.g.: example@email.com" />
+                  </Form.Group>
+                  <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Label>Student ID</Form.Label>
                     <Form.Control type="text" placeholder="e.g.: 12345" />
                   </Form.Group>
@@ -83,12 +96,20 @@ const Home = () => {
                       <option>Law</option>
                     </Form.Control>
                   </Form.Group>
+                  <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="text" placeholder="Must include numbers" />
+                  </Form.Group>
+                  <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Confirm password</Form.Label>
+                    <Form.Control type="text" placeholder="Must include numbers" />
+                  </Form.Group>
                 </Form>
                 <div>
                   <Button variant="primary" className="mainPageButton">Log in</Button>
                 
-                  <Button variant="primary" className="signinformButton">Sign up</Button>
-                
+                  <Button variant="primary" className="signinformButton" onClick={ButtonClickHandler}>Sign up</Button>
+                  {showModal && <PopUp></PopUp>}
                 </div>
               </Card>
             </Col>
