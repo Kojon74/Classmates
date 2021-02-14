@@ -31,7 +31,7 @@ input {
   float: left;
   background-color: #fff;
   border-right: 1px solid var(--two);
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .question-list .new-q {
@@ -39,8 +39,9 @@ input {
   display: block;
 }
 
-.question .question-container {
-  height: fit-content;
+.question-list .questions-container {
+  height: 80vh;
+  overflow: scroll;
 }
 
 /* Question Start */

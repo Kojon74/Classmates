@@ -14,9 +14,11 @@ const QuestionList = () => {
         New Question
       </button>
       <div className="questions-container">
-        {docs.map((question) => {
-          return <Question key={question.questionId} {...question} />;
-        })}
+        <div className="questions-subcontainer">
+          {docs.map((question) => {
+            return <Question key={question.questionId} {...question} />;
+          })}
+        </div>
       </div>
     </section>
   );
