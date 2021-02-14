@@ -9,10 +9,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PopUp from "./componets/PopUp";
 import Welcome from "./componets/Welcome";
-import axios from "axios";
 
 const Home = () => {
   const [emailMatchingCheck, setEmailMatchingCheck] = useState(false);
+  const [major, setMajor] = useState(0);
   const [showUniError, setShowUniError] = useState(false);
   const [showDepError, setShowDepError] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -29,6 +29,9 @@ const Home = () => {
   const departmentDropdownHandler = (e) => {
     setDepartment(e.target.value);
   };
+  const majorDropdownHandler = (e) => {
+    setMajor(e.target.value);
+};
   const guestInputHandler = () => {
     if (university === 0 && department === 0) {
       setShowUniError(true);
@@ -48,6 +51,9 @@ const Home = () => {
     setEnteredPassword(e.target.value);
   };
   const LogInHandler = () => {};
+  const majorInputHandler = () => {
+    window.location.href = "/major";
+  };
 
   return (
     <div>
@@ -92,7 +98,23 @@ const Home = () => {
                     <option>Law</option>
                   </Form.Control>
                   {showDepError && <p className="warning">Make a selection</p>}
-                </Form.Group>
+                  </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlSelect3">
+                      <Form.Label>Major</Form.Label>
+                        <Form.Control
+                        as="select"
+                        onChange={majorDropdownHandler}
+                        value={major}
+                        >
+                      <option key="blankChoice" hidden value />
+                      <option>AANB</option>
+                      <option>ACAM</option>
+                      <option>ADHE</option>
+                      <option>AFST</option>
+                      <option>AGEC</option>
+                    </Form.Control>
+                    {showUniError && <p className="warning">Make a selection</p>}
+                  </Form.Group>
               </Form>
               <Button
                 variant="primary"
