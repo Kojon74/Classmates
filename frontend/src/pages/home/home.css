@@ -8,8 +8,9 @@
 }
 
 .card {
-  background-color: #f2ead8;
-  border: 2px solid #cc8d9b;
+  background-color: #fff;
+  border: none;
+  /* border: 2px solid #cc8d9b; */
   border-radius: 10px;
 }
 
@@ -36,4 +37,20 @@
 .warning {
   color: red;
   display: inline;
+}
+
+.welcome {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.welcome .slogan {
+  width: fit-content;
+}
+
+.welcome .illustration {
+  height: 200px;
+  width: 300px;
 }
