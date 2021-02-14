@@ -7,3 +7,36 @@
     opacity: 0.9;
     
 }
+
+.card {
+    background-color: #f2ead8;
+    border:2px solid #CC8D9B;
+    border-radius: 10px;
+}
+
+.form {
+    padding: 20px;
+}
+
+.mainPageButton {
+    background-color:#2e2936;
+    border-color: #2e2936;
+    border-radius: 10px;
+    
+}
+
+body {
+    background-color: #2e2936;
+}
+
+
+.signinformButton{
+    background-color:#8c70b8;
+    border-color: #8c70b8;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    right:0px;
+   
+}
