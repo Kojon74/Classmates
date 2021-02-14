@@ -3,6 +3,22 @@
   width: 100%;
 }
 
+button {
+  background-color: white;
+  border: 2px solid var(--two);
+  border-radius: 3px;
+}
+
+textarea {
+  border: 2px solid var(--two);
+  border-radius: 5px;
+}
+
+input {
+  border: 2px solid var(--two);
+  border-radius: 3px;
+}
+
 /* input {
   padding-left: 0;
   padding-top: 0;
@@ -17,7 +33,7 @@
   box-sizing: border-box;
   float: left;
   background-color: #fff;
-  border-right: 1px solid #888;
+  border-right: 1px solid var(--two);
 }
 
 .question-list .new-q {
@@ -44,6 +60,7 @@
 .question .question-user {
   font-size: 15px;
   font-weight: 400;
+  color: var(--one);
 }
 
 .question .border-bottom {
@@ -110,6 +127,7 @@
 
 .post .user {
   font-size: 20px;
+  color: var(--one);
 }
 
 .post label {
@@ -130,7 +148,7 @@
 .answer {
   margin: 20px 0;
   padding: 10px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 5px;
 }
 
