@@ -4,3 +4,9 @@
   top: 0px;
   left: 20%;
 }
+
+.cancelButton {
+  background-color: #8c70b8;
+  border-color: #8c70b8;
+  border-radius: 10px;
+}

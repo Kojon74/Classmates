@@ -32,3 +32,8 @@
   position: relative;
   right: 0px;
 }
+
+.warning {
+  color: red;
+  display: inline;
+}
