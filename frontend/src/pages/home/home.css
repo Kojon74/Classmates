@@ -1,42 +1,39 @@
 .signInButton {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .titlePara {
-    background-color: white;
-    opacity: 0.9;
-    
+  background-color: white;
+  opacity: 0.9;
 }
 
 .card {
-    background-color: #f2ead8;
-    border:2px solid #CC8D9B;
-    border-radius: 10px;
+  background-color: #f2ead8;
+  border: 2px solid #cc8d9b;
+  border-radius: 10px;
 }
 
 .form {
-    padding: 20px;
+  padding: 20px;
 }
 
 .mainPageButton {
-    background-color:#2e2936;
-    border-color: #2e2936;
-    border-radius: 10px;
-    
+  background-color: #2e2936;
+  border-color: #2e2936;
+  border-radius: 10px;
 }
 
 .homePage {
-    background-color: #2e2936;
+  background-color: #2e2936;
+  height: 100%;
 }
 
-
-.signinformButton{
-    background-color:#8c70b8;
-    border-color: #8c70b8;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    position: relative;
-    right:0px;
-   
+.signinformButton {
+  background-color: #8c70b8;
+  border-color: #8c70b8;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  right: 0px;
 }
