@@ -4,16 +4,24 @@ import Navbar from "./Navbar";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Course from "./pages/course/Course";
-import { AppProvider } from "./pages/course/context";
+import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
+import { AppProvider } from "./context";
 
 const App = () => {
   return (
-    <AppProvider>
-      <Router>
+    <Router>
+      <AppProvider>
         <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/about">
             <About />
@@ -22,8 +30,8 @@ const App = () => {
             <Course />
           </Route>
         </Switch>
-      </Router>
-    </AppProvider>
+      </AppProvider>
+    </Router>
   );
 };
 

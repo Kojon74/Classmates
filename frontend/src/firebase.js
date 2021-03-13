@@ -1,21 +1,22 @@
 import firebase from "firebase/app";
-import "firebase/storage";
 import "firebase/firestore";
+import "firebase/auth";
 
 // Your web app's Firebase configuration
+console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 var firebaseConfig = {
-  apiKey: "AIzaSyDTg3GKHjCapIXuvVZtJk59XP7U-A1CAc8",
-  authDomain: "classmates-10eb0.firebaseapp.com",
-  projectId: "classmates-10eb0",
-  storageBucket: "classmates-10eb0.appspot.com",
-  messagingSenderId: "110232990060",
-  appId: "1:110232990060:web:7a9f75b08ec12e92b14349",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const projectStorage = firebase.storage();
+const projectAuth = firebase.auth();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore, timestamp };
+export { projectAuth, projectFirestore, timestamp };

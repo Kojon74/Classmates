@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../../context";
 import { v4 as uuidv4 } from "uuid";
+import { projectAuth } from "../../../firebase";
 
 const NewQuestion = () => {
   const [questionTitle, setQuestionTitle] = useState("");
@@ -15,7 +16,7 @@ const NewQuestion = () => {
       questionId: id,
       questionTitle,
       questionText,
-      questionUser: "user1",
+      questionUser: projectAuth.currentUser.displayName,
       questionTime: new Date().getTime().toString(),
       answers: [],
     };

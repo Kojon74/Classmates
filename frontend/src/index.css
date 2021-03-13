@@ -19,18 +19,33 @@ code {
     monospace;
 }
 
+/* Navbar Start */
+
 .nav {
   height: 10vh;
+  min-height: 75px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: var(--two);
 }
 
+.nav .main-pages {
+  display: flex;
+  align-items: center;
+}
+
+.nav .logo {
+  height: 6vh;
+  margin-right: 5px;
+}
+
 .nav .nav-header {
-  margin: 10px 20px;
   font-size: 30px;
   color: var(--three);
+  display: flex;
+  margin-right: 15px;
 }
 
 .nav .nav-header:hover {
@@ -38,8 +53,42 @@ code {
 }
 
 .nav .nav-link {
-  margin-left: 30px;
-  border: 1px solid var(--three);
-  border-radius: 5px;
+  margin-left: 25px;
   color: var(--three);
 }
+
+.nav .auth {
+  display: flex;
+}
+
+.auth-link {
+  width: 80px;
+  padding: 5px 0;
+  margin-left: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.nav .login {
+  border: 2px solid var(--three);
+  color: var(--three);
+}
+
+.nav .login:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.signup {
+  background-color: var(--one);
+  border: 2px solid var(--one);
+  color: var(--three);
+}
+
+.signup:hover {
+  color: var(--three);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Navbar End */

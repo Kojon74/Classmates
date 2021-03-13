@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
-import { projectFirestore } from "../../firebase";
+import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { projectAuth, projectFirestore } from "./firebase";
 
 const AppContext = React.createContext();
 
@@ -8,6 +9,10 @@ const AppProvider = ({ children }) => {
   const [activePost, setActivePost] = useState({});
   const [questionSelected, setQuestionSelected] = useState(false);
   const [isNewQuestion, setIsNewQuestion] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  let history = useHistory();
 
   const setActivePostId = (id) => {
     const matchingIdQ = questionList.find(
@@ -26,7 +31,18 @@ const AppProvider = ({ children }) => {
       });
   };
 
-  // const AddAnswerFirebase = (questionId, answer);
+  useEffect(() => {
+    const unsubscribe = projectAuth.onAuthStateChanged((authUser) => {
+      setAuthLoading(false);
+      if (authUser) {
+        setIsLoggedIn(true);
+        history.push("/course");
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <AppContext.Provider
@@ -39,9 +55,10 @@ const AppProvider = ({ children }) => {
         isNewQuestion,
         setIsNewQuestion,
         addQuestionFirebase,
+        isLoggedIn,
       }}
     >
-      {children}
+      {!authLoading && children}
     </AppContext.Provider>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import Question from "./Question";
 // import data from "../../../data";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../../context";
 import useFirestore from "../../../useFirestore";
 
 const QuestionList = () => {

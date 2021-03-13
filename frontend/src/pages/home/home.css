@@ -1,43 +1,4 @@
-.signInButton {
-  margin-left: 10px;
-}
-
-.titlePara {
-  background-color: white;
-  opacity: 0.9;
-}
-
-.card {
-  background-color: #fff;
-  border: none;
-  /* border: 2px solid #cc8d9b; */
-  border-radius: 10px;
-}
-
-.form {
-  padding: 20px;
-}
-
-.mainPageButton {
-  background-color: #2e2936;
-  border-color: #2e2936;
-  border-radius: 10px;
-}
-
-.signinformButton {
-  background-color: #8c70b8;
-  border-color: #8c70b8;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
-  right: 0px;
-}
-
-.warning {
-  color: red;
-  display: inline;
-}
+/* Welcome Start */
 
 .welcome {
   height: 300px;
@@ -50,7 +11,70 @@
   width: fit-content;
 }
 
+.welcome .signup {
+  padding: 7px 10px;
+  margin: 10px 0;
+}
+
+.welcome .signup:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  color: var(--three);
+}
+
 .welcome .illustration {
   height: 200px;
   width: 300px;
 }
+
+@media screen and (max-width: 700px) {
+  .welcome {
+    height: 400px;
+    flex-direction: column-reverse;
+  }
+}
+/* Welcome End */
+/* Search Start */
+.search .header {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+
+.search form {
+  width: 700px;
+  max-width: 80%;
+  margin: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search .input-container {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.search label {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.search select {
+  width: 100%;
+  padding: 3px 5px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 2px solid var(--two);
+  border-radius: 3px;
+}
+
+.search .signup {
+  display: block;
+  margin: 20px auto 0;
+}
+
+.search .signup:hover {
+  opacity: 0.8;
+}
+
+/* Search End */

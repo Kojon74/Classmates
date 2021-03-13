@@ -1,7 +1,7 @@
 import React from "react";
 import QuestionList from "./components/QuestionList";
 import Post from "./components/Post";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../../context";
 import "./Course.css";
 import NewQuestion from "./components/NewQuestion";
 

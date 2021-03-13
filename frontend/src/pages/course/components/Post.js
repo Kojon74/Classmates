@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../../context";
 import Answer from "./Answer";
 import { v4 as uuidv4 } from "uuid";
+import { projectAuth } from "../../../firebase";
 
 const Post = () => {
   const [userAnswer, setUserAnswer] = useState("");
@@ -18,7 +19,7 @@ const Post = () => {
     const answer = {
       answerId: uuidv4(),
       answerText: userAnswer,
-      answerUser: "user2",
+      answerUser: projectAuth.currentUser.displayName,
       answerTime: new Date().getTime().toString(),
     };
     const answers = [...activePost.answers, answer];

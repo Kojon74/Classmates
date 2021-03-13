@@ -3,7 +3,18 @@
   margin: 50px auto;
 }
 
+.about .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .about p {
-  padding: 0 200px;
+  width: 50%;
   font-size: 20px;
+}
+
+.about .svg {
+  height: fit-content;
+  width: 30%;
 }
