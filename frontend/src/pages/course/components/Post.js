@@ -6,7 +6,7 @@ import { projectAuth } from "../../../firebase";
 
 const Post = () => {
   const [userAnswer, setUserAnswer] = useState("");
-  const { activePost, addQuestionFirebase } = useGlobalContext();
+  const { activePost, activeAnswers, addQuestionFirebase } = useGlobalContext();
 
   const handleChange = (e) => {
     const newVal = e.target.value;
@@ -39,7 +39,7 @@ const Post = () => {
         <textarea type="text" value={userAnswer} onChange={handleChange} />
         <button className="submit">Post Answer</button>
       </form>
-      {activePost.answers.map((answer) => {
+      {activeAnswers.map((answer) => {
         return <Answer key={answer.answerId} {...answer} />;
       })}
     </section>
